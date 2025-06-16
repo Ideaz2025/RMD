@@ -273,7 +273,8 @@ const books = [
       "Dr. Venkata N Inukollu",
       "Ms. Srilatha Toomula",
       "Dr. Manoranjan Dash"
-    ]
+    ],
+    pdf: "/pdfs/11.pdf"
   },
   {
     id: 2,
@@ -286,7 +287,8 @@ const books = [
       "Mrs.D S Jayakumari",
       "Mrs.B. Jebaranjani"
     ],
-    issueDate: "17-11-2022"
+    issueDate: "17-11-2022",
+    pdf: "/pdfs/13.pdf"
   },
   {
     id: 3,
@@ -299,9 +301,11 @@ const books = [
       "M.Rajalakshmi",
       "D.Jeevitha"
     ],
-    issueDate: "17-11-2022"
+    issueDate: "17-11-2022",
+    pdf: "/pdfs/book3.pdf"
   }
 ];
+
  const workshopData = [
     {
       sno: 1,

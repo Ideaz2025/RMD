@@ -19,7 +19,21 @@ const Books = () => {
             <strong>Authors:</strong> {book.authors.join(", ")}<br />
             <strong>Publisher:</strong> {book.publisher}<br />
             <strong>ISBN:</strong> {book.isbn}<br />
-            {book.issueDate && <><strong>Issue Date:</strong> {book.issueDate}</>}
+            {book.issueDate && (
+              <>
+                <strong>Issue Date:</strong> {book.issueDate}<br />
+              </>
+            )}
+            {book.pdf && (
+              <a
+                href={book.pdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="view-book-link"
+              >
+                📘 View Book
+              </a>
+            )}
           </li>
         ))}
       </ul>

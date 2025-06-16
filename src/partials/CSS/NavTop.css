@@ -34,7 +34,6 @@ i#normal {
     color: rgba(0, 0, 0, 0.6);
 }
 .active {
-    border-bottom: 1px solid #000;
     color: #000 !important;
 }
 .navtop-list a:hover {
@@ -58,19 +57,22 @@ i#normal {
 }
 .side-menu {
     position: fixed;
-    top: 0; left: 0; bottom: 0;
+    top: 0;
+    left: 0; /* Ensures sidebar is flush with the left edge */
+    bottom: 0;
     width: 270px;
-    background: #000;
-    color: #fff;
+    background: #f5f8fa;
+    color: #222;
     z-index: 9999;
-    padding: 32px 18px 18px 18px;
-    box-shadow: 2px 0 16px rgba(0,0,0,0.18);
+    padding: 32px 18px 18px 18px; /* Adjust left padding if needed */
+    box-shadow: 2px 0 16px rgba(0,0,0,0.10);
     display: flex;
     flex-direction: column;
     overflow-y: auto;
     animation: slideInLeft 0.25s;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    margin-left: 0; /* Make sure there's no margin */
 }
 .side-menu::-webkit-scrollbar { display: none; }
 @keyframes slideInLeft {
@@ -80,7 +82,7 @@ i#normal {
 .side-menu-close {
     background: none;
     border: none;
-    color: #fff;
+    color: #222;
     font-size: 2rem;
     position: absolute;
     top: 12px;
@@ -97,7 +99,8 @@ i#normal {
 }
 .side-menu .nav-link,
 .side-menu .accordion-toggle {
-    color: #fff !important;
+    color: #222 !important;
+    background: transparent;
     font-size: 1.1rem;
     margin: 10px 0;
     text-align: left;
@@ -110,12 +113,12 @@ i#normal {
 .side-menu .nav-link.active,
 .side-menu .nav-link:hover,
 .side-menu .accordion-toggle:hover {
-    background: #222;
-    color: #00e6d0 !important;
+    background: #e3f0fc;
+    color: #1976d2 !important;
     transform: translateX(8px) scale(1.04);
 }
 .side-menu .accordion-content a {
-    color: #fff !important;
+    color: #222 !important;
     font-size: 1rem;
     margin-left: 24px;
     margin-bottom: 6px;
@@ -125,8 +128,8 @@ i#normal {
     transition: background 0.22s, color 0.22s, transform 0.15s;
 }
 .side-menu .accordion-content a:hover {
-    background: #222;
-    color: #00e6d0 !important;
+    background: #e3f0fc;
+    color: #1976d2 !important;
     transform: translateX(6px) scale(1.03);
 }
 
@@ -142,7 +145,7 @@ i#normal {
     padding-left: 28px;
     margin-bottom: 10px;
     font-size: 1.08rem;
-    color: #fff;
+    color: #222;
     transition: color 0.22s;
 }
 .side-menu li::before {
@@ -153,17 +156,17 @@ i#normal {
     transform: translateY(-50%);
     width: 8px;
     height: 8px;
-    background: #00e6d0;
+    background: #1976d2;
     border-radius: 50%;
     transition: background 0.22s;
 }
 .side-menu li:hover,
 .side-menu li:focus-within {
-    color: #00e6d0;
+    color: #1976d2;
 }
 .side-menu li:hover::before,
 .side-menu li:focus-within::before {
-    background: #fff;
+    background: #222;
 }
 
 /* --- RESPONSIVE BREAKPOINTS --- */
@@ -202,6 +205,7 @@ i#normal {
     .side-menu .accordion-toggle {
         font-size: 1rem;
         padding: 8px 6px;
+        border: none;
     }
 }
 @media (max-width: 600px) {
