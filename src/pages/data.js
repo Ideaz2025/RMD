@@ -8,7 +8,7 @@ const conferencePapers = [
     location: "VIT University, Chennai Campus",
     isbn: "ISBN: 978-93-83459-46-9",
     copyright: "2014 Bonfring",
-    pdf: "/pdfs/11.pdf"
+    pdf: "/journal1"
   },
   {
     id: 2,
@@ -94,7 +94,8 @@ const nationalJournals = [
     year: 2020,
     issn: "ISSN: 2233-7857",
     volume: "Volume 13, Number 2",
-    pages: "1491-1502"
+    pages: "1491-1502",
+    link: "/journal1"
   },
   {
     id: 2,
@@ -116,7 +117,8 @@ const nationalJournals = [
     volume: "Volume 20, Issue 10",
     pages: "11680-11690",
     doi: "10.14704/NQ.2022.20.10.NQ551133",
-    eissn: "eISSN:1303-5150"
+    eissn: "eISSN:1303-5150",
+      link: "http://penerbit.uthm.edu.my/ojs/index.php/ijie"
   },
   {
     id: 4,
@@ -127,7 +129,9 @@ const nationalJournals = [
     volume: "Volume 11, Issue 09",
     pages: "127-135",
     doi: "10.48047/IJIEMR/V11/ISSUE 09/14",
-    issn: "ISSN: 2456 – 5083"
+    issn: "ISSN: 2456 – 5083",
+      link: "http://penerbit.uthm.edu.my/ojs/index.php/ijie"
+
   },
   {
     id: 5,
@@ -137,7 +141,9 @@ const nationalJournals = [
     year: 2022,
     volume: "Volume 41, Issue 11",
     doi: "10050086.2022.12.05",
-    issn: "ISSN: 1005-0086"
+    issn: "ISSN: 1005-0086",
+      link: "http://penerbit.uthm.edu.my/ojs/index.php/ijie"
+
   }
 ];
 const internationalJournals = [

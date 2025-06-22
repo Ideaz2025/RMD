@@ -1,4 +1,4 @@
-import { AiFillGithub, AiFillLinkedin, AiFillInstagram } from "react-icons/ai";
+import {  AiFillLinkedin, AiFillInstagram, AiFillGooglePlusCircle } from "react-icons/ai";
 import "./CSS/Footer.css";
 
 function Footer() {
@@ -10,29 +10,29 @@ function Footer() {
         </div>
         <div className="foot-right d-flex">
           <a
-            href="https://github.com/Muhthoriqas"
+            href="https://scholar.google.co.in/citations?user=j6RuO2gAAAAJ&hl=en"
             target="_blank"
             rel="noreferrer"
           >
-            <AiFillGithub className="foot-icon" />
-            &nbsp;&nbsp;GitHub
+            <AiFillGooglePlusCircle className="foot-icon" />
+            &nbsp;&nbsp;Google Scholar
           </a>
           <a
-            href="https://www.linkedin.com/in/thoriqas/"
+            href="#"
             target="_blank"
             rel="noreferrer"
           >
             <AiFillLinkedin className="foot-icon" />
             &nbsp;&nbsp;Linkedin
           </a>
-          <a
-            href="https://www.instagram.com/mthoriq_as/"
+          {/* <a
+            href=""
             target="_blank"
             rel="noreferrer"
           >
             <AiFillInstagram className="foot-icon" />
-            &nbsp;&nbsp;Instagram
-          </a>
+            &nbsp;&nbsp;
+          </a> */}
         </div>
       </footer>
     </>

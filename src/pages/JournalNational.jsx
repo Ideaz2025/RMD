@@ -3,6 +3,7 @@ import { nationalJournals } from "./data.js";
 import "./data.css";
 import "animate.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Link } from "react-router-dom";
 const JournalList = () => {
   const pageTitle = "National Journals | Publication Summary";
   return (
@@ -28,16 +29,7 @@ const JournalList = () => {
               {journal.issn && <span>{journal.issn}<br /></span>}
               {journal.eissn && <span>{journal.eissn}<br /></span>}
               {journal.doi && <span>DOI: {journal.doi}<br /></span>}
-              {journal.link && (
-                <a
-                  href={journal.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="journal-link"
-                >
-                  View Journal
-                </a>
-              )}
+              {<Link to={journal.link}>View Pdf</Link>}
             </li>
           ))}
         </ul>

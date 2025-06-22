@@ -26,6 +26,7 @@ import PatentPublished from './pages/PatentPublished';
 import PatentGranted from './pages/PatentGranted';
 import { Helmet,HelmetProvider } from "react-helmet-async";
 import StudentReviews from "./pages/studentreview";
+import Pdfview from './pages/pdfview';
 function App() {
   const [preload, setPreload] = useState(true);
 
@@ -78,6 +79,7 @@ function App() {
           <Route path="/patent/published" element={<PatentPublished />} />
           <Route path="/patent/granted" element={<PatentGranted />} />
           <Route path="/studentreviews" element={<StudentReviews/>} />
+          <Route path="/pdfview" element={<Pdfview/>} />
           </Routes>
       </div>
       <Footer />
