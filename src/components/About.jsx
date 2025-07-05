@@ -13,10 +13,16 @@ function About() {
     slide: 1,
   });
 
+  const openLightboxOnSlide = (slide = 1) => {
+    setLightboxController({
+      toggler: !lightboxController.toggler,
+      slide,
+    });
+  };
 
   return (
     <>
-      <HelmetProvider>
+      <HelmetProvider >
         <Helmet>
           <title>About</title>
         </Helmet>
@@ -45,7 +51,11 @@ function About() {
           border: "4px solid #1c658c",
           marginBottom: "1.5rem"
         }}
+        onClick={() => openLightboxOnSlide(1)} // Example: open lightbox on click
+        onKeyDown={(e) => e.key === 'Enter' && openLightboxOnSlide(1)} // Accessibility support
+        tabIndex="0" // Make it focusable
       />
+      
       <div className="profile-section mt-4">
         <h3>Personal Profile</h3>
         <table className="profile-table">
