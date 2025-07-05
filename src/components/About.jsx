@@ -59,7 +59,6 @@ function About() {
         borderRadius: "16px",
         boxShadow: "0 1px 8px rgba(28,101,140,0.10)",
         padding: "1.5rem 1.2rem",
-        marginLeft: "30px",
         marginBottom: "1.5rem", 
         maxWidth: "1000px",
         width: "100%",}}>
@@ -136,7 +135,6 @@ function About() {
         borderRadius: "16px",
         boxShadow: "0 1px 8px rgba(28,101,140,0.10)",
         padding: "1.5rem 1.2rem",
-        marginLeft: "30px",
         marginBottom: "1.5rem", 
         maxWidth: "1000px",
         width: "100%", // Always take full width of parent
