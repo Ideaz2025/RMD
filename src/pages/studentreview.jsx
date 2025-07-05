@@ -82,14 +82,36 @@ const StudentReviews = () => {
         <h2>Student Feedback on Faculty</h2>
         <p className="section-subtitle">Read what students are saying about their faculty experience.</p>
         <div className="review-carousel">
-          {reviews.length > 0 && (
-            <div className="card">
-              <div className="review-avatar">{reviews[current].icon}</div>
-              <h3>{reviews[current].name}</h3>
-              <h4>{reviews[current].course}</h4>
-              <p>"{reviews[current].comment}"</p>
-            </div>
-          )}
+          <div className="carousel-row">
+            {reviews.length > 0 && (
+              <figure className="snip1533">
+                <figcaption>
+                  <div className="review-avatar" style={{ fontSize: "2.2rem", marginBottom: 8 }}>
+                    {reviews[current].icon}
+                  </div>
+                  <blockquote>
+                    {reviews[current].comment}
+                  </blockquote>
+                  <h3>{reviews[current].name}</h3>
+                  <h4>{reviews[current].course}</h4>
+                </figcaption>
+              </figure>
+            )}
+            {reviews.length > 1 && (
+              <figure className="snip1533">
+                <figcaption>
+                  <div className="review-avatar" style={{ fontSize: "2.2rem", marginBottom: 8 }}>
+                    {reviews[(current + 1) % reviews.length].icon}
+                  </div>
+                  <blockquote>
+                    {reviews[(current + 1) % reviews.length].comment}
+                  </blockquote>
+                  <h3>{reviews[(current + 1) % reviews.length].name}</h3>
+                  <h4>{reviews[(current + 1) % reviews.length].course}</h4>
+                </figcaption>
+              </figure>
+            )}
+          </div>
           {reviews.length > 1 && (
             <div className="carousel-controls">
               <button onClick={prevReview} className="carousel-btn">&#8592;</button>

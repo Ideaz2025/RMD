@@ -95,7 +95,7 @@ const nationalJournals = [
     issn: "ISSN: 2233-7857",
     volume: "Volume 13, Number 2",
     pages: "1491-1502",
-    link: "/journal1"
+    link: ""
   },
   {
     id: 2,

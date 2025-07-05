@@ -1,8 +1,10 @@
 import React from "react";
 import "./data.css";
 import "animate.css";
+import patent from "./pdfs/Patent.pdf"; // Adjust the path as necessary
 
 const PatentList = () => {
+  const patentPdf = patent;
   const patents = [
     {
       title:
@@ -16,8 +18,6 @@ const PatentList = () => {
       title: "THE SMART GARBAGE MANAGEMENT SYSTEM",
       date: "12-Feb-2021",
       number: "202121002140",
-      link:
-        "https://ipindiaservices.gov.in/PublicSearch/PublicationSearch/PatentDetails",
       description:
         "An IoT-based system comprising authentication, monitoring, control, and notification modules for hygienic garbage management. It uses sensors, RFID, and automated controls to optimize bin usage and alert nodal agencies.",
     },
@@ -28,6 +28,14 @@ const PatentList = () => {
       number: "202241058952 A",
       description:
         "This invention uses AI techniques to evaluate and improve the performance of mini-channel-based solar collectors for more efficient solar energy utilization.",
+    },
+    {
+      title:
+        "Driver Somnolence & Lethargy Detection Model based on Eyes & Facial Movement using OpenCV Library",
+      date: "28/03/2025",
+      number: "202541023106 A",
+      description:
+        "A model for detecting driver drowsiness and lethargy by analyzing eye and facial movements using the OpenCV library.",
     },
   ];
 
@@ -49,19 +57,25 @@ const PatentList = () => {
               <strong>Patent No:</strong> {patent.number}
             </p>
             <p className="patent-desc">{patent.description}</p>
-            {patent.link && (
-              <a
-                href={patent.link}
-                className="patent-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Patent Details
-              </a>
-            )}
           </div>
         ))}
+      
       </div>
+        <div style={{ marginTop: "0.5rem",display: "flex", justifyContent: "center" }}>
+          <button
+            className="pdf-btn"
+            onClick={() =>
+              window.open(
+                patentPdf,
+                "pdfPopup",
+                "width=900,height=600,scrollbars=yes,resizable=yes"
+              )
+            }
+            type="button"
+          >
+            📄 View PDF
+          </button>
+        </div>
     </div>
   );
 };

@@ -51,10 +51,13 @@ body {
   max-width: 1200px;
   margin: 2rem auto;
   padding: 2rem;
-  background: var(--text-light);
-  border-radius: 14px;
-  box-shadow: 0 2px 16px rgba(28,101,140,0.08);
-  border: 1.5px solid var(--main-blue);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  animation: fadeInUpGlass 1s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  overflow: hidden;
 }
 
 .patent-title,
@@ -155,6 +158,60 @@ body {
 .conference-intl-item:hover {
   box-shadow: 0 4px 16px rgba(28,101,140,0.13);
   border-left: 4px solid var(--accent-blue);
+}
+
+/* Frosted glass effect for all cards */
+.patent-item,
+.membership-item,
+.awards-item,
+.exp-item,
+.book-item,
+.conference-item,
+.journal-item,
+.journal-intl-item,
+.conference-intl-item {
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUpGlass 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Animation keyframes */
+@keyframes fadeInUpGlass {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0) scale(0.97);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+
+/* Optional: add a subtle glassy shine overlay */
+.patent-item::before,
+.membership-item::before,
+.awards-item::before,
+.exp-item::before,
+.book-item::before,
+.conference-item::before,
+.journal-item::before,
+.journal-intl-item::before,
+.conference-intl-item::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.08) 100%);
+  border-radius: 16px;
+  z-index: 1;
 }
 
 /* Titles and meta */
@@ -340,16 +397,7 @@ img, table {
 }
 
 /* Book, Conference, Journal Intl containers and items */
-.book-container,
-.conference-container,
-.journal-intl-container {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-}
+
 .book-title,
 .conference-title,
 .journal-intl-title {
@@ -447,66 +495,90 @@ img, table {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  margin: 0 auto;
+  gap: 24px;
 }
-
 
 .row {
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
+  gap: 24px;
 }
 
-.col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Certificate images */
-.certificates-ratio img {
-  width: 300px;
-  max-width: 90vw;
-  height: auto;
+.certificates-ratio {
+  background: #fff;
   border-radius: 10px;
-  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 2px 12px rgba(28,101,140,0.13);
-  object-fit: cover;
+  cursor: pointer;
+  padding: 8px;
 }
 
-.certificates-ratio img:hover {
+.certificates-ratio:hover {
   transform: scale(1.04);
-  box-shadow: 0 6px 24px rgba(28,101,140,0.18);
+  box-shadow: 0 6px 24px rgba(25, 118, 210, 0.15);
 }
 
-/* Responsive for tablets */
+.certificates-ratio img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Main gallery container */
+.certificates-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 32px;
+}
+
+/* Each certificate item */
+.certificates-thumb {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.18s, box-shadow 0.18s;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.certificates-thumb:hover {
+  transform: scale(1.04);
+  box-shadow: 0 6px 24px rgba(25, 118, 210, 0.15);
+}
+
+.certificates-thumb img {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Tablet responsive */
 @media (max-width: 900px) {
-  .row {
-    gap: 1rem;
-  }
-  .certificates-ratio img {
+  .certificates-thumb img {
     width: 220px;
   }
 }
 
-/* Responsive for phones */
+/* Mobile responsive */
 @media (max-width: 600px) {
-  .row {
+  .certificates-gallery {
     flex-direction: column;
     align-items: center;
-    gap: 1.2rem;
-    margin-bottom: 1.2rem;
+    gap: 20px;
   }
-  .certificates-ratio img {
+
+  .certificates-thumb img {
     width: 95vw;
     max-width: 380px;
     min-width: 160px;
-  }
-  .certificates-wrapper{
-    height: 100vh;
   }
 }

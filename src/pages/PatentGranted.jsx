@@ -29,30 +29,22 @@ const Patentgranted = () => {
         slide={lightboxController.slide}
         className="fslightbox-source"
       />
-      <div className="certificates-wrapper">
-        {PatentImage
-          .reduce((rows, src, index) => {
-            if (index % 3 === 0) rows.push([]);
-            rows[rows.length - 1].push(
-              <div className="col certificates-ratio gap-image animate__animated animate__zoomIn" style={{ animationDelay: `${0.2 + index * 0.07}s` }} key={src}>
-                <img
-                  className="shadow"
-                  width="300px"
-                  height="100%"
-                  loading="lazy"
-                  src={src}
-                  alt={`Certificate ${index + 1}`}
-                  onClick={() => openLightboxOnSlide(index + 1)}
-                />
-              </div>
-            );
-            return rows;
-          }, [])
-          .map((row, index) => (
-            <div className="row my-4" key={index}>
-              {row}
-            </div>
-          ))}
+      <div className="certificates-gallery">
+        {PatentImage.map((src, index) => (
+          <div
+            className="certificates-thumb animate__animated animate__zoomIn"
+            style={{ animationDelay: `${0.2 + index * 0.07}s` }}
+            key={src}
+            onClick={() => openLightboxOnSlide(index + 1)}
+          >
+            <img
+              className="shadow"
+              src={src}
+              alt={`Certificate ${index + 1}`}
+              loading="lazy"
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
