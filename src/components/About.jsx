@@ -54,44 +54,7 @@ function About() {
         
       />
       
-      <div className="profile-section mt-4" style={{
-      background: "rgba(245,247,250,0.95)",
-        borderRadius: "16px",
-        boxShadow: "0 1px 8px rgba(28,101,140,0.10)",
-        padding: "1.5rem 1.2rem",
-        marginBottom: "1.5rem", 
-        maxWidth: "1000px",
-        width: "100%",}}>
-        <h3>Personal Profile</h3>
-        <table className="profile-table">
-          <tbody>
-            <tr>
-              <td><b>Father’s Name</b></td>
-              <td>: V. Rajan</td>
-            </tr>
-            <tr>
-              <td><b>Date of Birth</b></td>
-              <td>: 30-05-1978</td>
-            </tr>
-            <tr>
-              <td><b>Sex</b></td>
-              <td>: Male</td>
-            </tr>
-            <tr>
-              <td><b>Marital Status</b></td>
-              <td>: Married</td>
-            </tr>
-            <tr>
-              <td><b>Linguistic Abilities</b></td>
-              <td>: English, Tamil, Kannada, Telugu</td>
-            </tr>
-            <tr>
-              <td><b>Nationality</b></td>
-              <td>: Indian</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+ 
     </div>
     {/* Right: About Text & Technology */}
     <div className="col-lg-8 col-md-7 about-right-col">
@@ -158,6 +121,44 @@ function About() {
         </ul>
       </div>
     </div>
+         <div className="profile-section mt-4" style={{
+      background: "rgba(245,247,250,0.95)",
+        borderRadius: "16px",
+        boxShadow: "0 1px 8px rgba(28,101,140,0.10)",
+        padding: "1.5rem",
+        marginBottom: "1.5rem", 
+        maxWidth: "800px",
+        width: "100%",}}>
+        <h3>Personal Profile</h3>
+        <table className="profile-table">
+          <tbody>
+            <tr>
+              <td><b>Father’s Name</b></td>
+              <td>: V. Rajan</td>
+            </tr>
+            <tr>
+              <td><b>Date of Birth</b></td>
+              <td>: 30-05-1978</td>
+            </tr>
+            <tr>
+              <td><b>Sex</b></td>
+              <td>: Male</td>
+            </tr>
+            <tr>
+              <td><b>Marital Status</b></td>
+              <td>: Married</td>
+            </tr>
+            <tr>
+              <td><b>Linguistic Abilities</b></td>
+              <td>: English, Tamil, Kannada, Telugu</td>
+            </tr>
+            <tr>
+              <td><b>Nationality</b></td>
+              <td>: Indian</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
   </div>
 </Container>
         
