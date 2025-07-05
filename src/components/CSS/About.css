@@ -232,13 +232,11 @@
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 1px 4px rgba(28,101,140,0.06);
-  padding: 1.5rem 1.5rem 1rem 1.5rem;
-  margin: 2rem 1rem;
-  margin-left: 50px;
-  max-width: 900px;
-  width: 100%;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 1.5rem;
+  max-width: 600px;   /* Set your desired max width */
+  width: 100%;        /* Always take full width of parent */
+  margin-left: auto;  /* Center horizontally */
+  margin-right: auto;
 }
 .profile-section h3 {
   color: #1c658c;

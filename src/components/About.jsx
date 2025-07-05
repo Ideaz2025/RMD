@@ -51,12 +51,18 @@ function About() {
           border: "4px solid #1c658c",
           marginBottom: "1.5rem"
         }}
-        onClick={() => openLightboxOnSlide(1)} // Example: open lightbox on click
-        onKeyDown={(e) => e.key === 'Enter' && openLightboxOnSlide(1)} // Accessibility support
-        tabIndex="0" // Make it focusable
+        
       />
       
-      <div className="profile-section mt-4">
+      <div className="profile-section mt-4" style={{
+      background: "rgba(245,247,250,0.95)",
+        borderRadius: "16px",
+        boxShadow: "0 1px 8px rgba(28,101,140,0.10)",
+        padding: "1.5rem 1.2rem",
+        marginLeft: "30px",
+        marginBottom: "1.5rem", 
+        maxWidth: "1000px",
+        width: "100%",}}>
         <h3>Personal Profile</h3>
         <table className="profile-table">
           <tbody>
@@ -130,7 +136,10 @@ function About() {
         borderRadius: "16px",
         boxShadow: "0 1px 8px rgba(28,101,140,0.10)",
         padding: "1.5rem 1.2rem",
-        marginBottom: "1.5rem"
+        marginLeft: "30px",
+        marginBottom: "1.5rem", 
+        maxWidth: "1000px",
+        width: "100%", // Always take full width of parent
       }}>
         <h3>Technology and Subjects Taught</h3>
         <ul>
